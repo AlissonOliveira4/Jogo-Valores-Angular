@@ -1,0 +1,75 @@
+<div class="info">
+  <!-- Botões para abrir os overlays -->
+  <button (click)="openOverlay('tutorial')">Tutorial</button>
+  <button (click)="openOverlay('regras')">Regras</button>
+  <button (click)="openOverlay('ranking')">Ranking</button>
+</div>
+
+<!-- Overlay -->
+<div *ngIf="visibleOverlay" class="overlay">
+  <div class="overlay-content">
+    <ng-container [ngSwitch]="visibleOverlay">
+      <div *ngSwitchCase="'tutorial'">
+        <h3>Tutorial</h3>
+        <p>Antes de começar o jogo devemos ler as regras para assim termos uma melhor experiência nele</p>
+        <br />
+        <img src="assets/tela1.png" alt="tela1" id="tela1" />
+        <p>Após terminar de ler as regras clique no botão fechar para voltar ao menu</p>
+        <br />
+        <img src="assets/tela2.png" alt="tela2" id="tela2" />
+        <p>Em seguida, clique no botão “Começar o jogo” para assim dar início ao jogo</p>
+        <br />
+        <img src="assets/tela3.png" alt="tela3" id="tela3" />
+        <p>Depois de ter clicado nesse botão, você será redirecionado para a tela de login, onde deve colocar seu apelido no jogo</p>
+        <br />
+        <img src="assets/tela4.png" alt="tela4" id="tela4" />
+        <p>Agora estando no jogo, você deve selecionar 3 atributos corretos de cada valor para ganhar pontos</p>
+        <br />
+        <img src="assets/tela5.png" alt="tela5" id="tela5" />
+        <p>Ao final do jogo você receberá um feedback do seu desempenho, conforme os seus pontos ganhos ao decorrer do jogo</p>
+        <br />
+        <img src="assets/tela6.png" alt="tela6" id="tela6" />
+        <p>Clicando no botão de “Retornar ao menu”, será redirecionado para a página inicial, voltando ao início do jogo</p>
+        <br /><br />
+      </div>
+
+      <div *ngSwitchCase="'regras'">
+        <h3>Regras</h3>
+        <p>
+          1° - O quiz tem que ser feito individualmente.<br /><br />
+          2° - Só pode selecionar no máximo 3 respostas de cada valor.<br /><br />
+          3° - Digite seu apelido antes de ir para o jogo!<br /><br />
+          4° - Não é permitido utilizar fontes externas, apenas o seu conhecimento.<br /><br />
+          5° - É estritamente proibido o uso do inspecionar das páginas do jogo!<br /><br />
+          6° - O jogo só tem 10 minutos, então seja rápido.<br />
+        </p>
+      </div>
+
+      <div *ngSwitchCase="'ranking'">
+        <h3>Ranking</h3>
+        <table id="ranking-table">
+          <thead>
+            <tr>
+              <th>Posição</th>
+              <th>Nome</th>
+              <th>Pontos</th>
+              <th>Tempo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of rankingData; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ user.nome }}</td>
+              <td>{{ user.pontos }}</td>
+              <td>{{ user.tempo }}</td>
+            </tr>
+            <tr *ngIf="rankingData.length === 0">
+              <td colspan="4">Carregando...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
+    <button class="closeOverlay" (click)="closeOverlay()">Fechar</button>
+  </div>
+</div>

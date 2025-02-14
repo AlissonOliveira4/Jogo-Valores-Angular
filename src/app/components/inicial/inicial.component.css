@@ -1,0 +1,41 @@
+.principal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+
+  h1{
+      display: flex;
+      width: 320px;
+      height: 110px;
+      align-items: center;
+      justify-content: center;
+      background-color: #426B1F;
+      border: 3px solid white;
+      border-radius: 15px;
+      margin: 20px;
+  }
+
+  p{
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      font-size: 200%;
+      margin: 25px;
+  }
+
+  button {
+      height: 50px;
+      width: 200px;
+      margin: 30px;
+      border-radius: 10px;
+      border: none;
+      background-color: #426B1F;
+  }
+
+}
+
+button {
+  color: white;
+}

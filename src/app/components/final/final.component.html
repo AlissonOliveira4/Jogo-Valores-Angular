@@ -1,0 +1,22 @@
+<form class="principal" (submit)="updateUser($event)">
+  <h1 #titulo>Parabéns por ter finalizado o jogo!</h1>
+  <h3 class="pontos">{{ pontos }} pontos!</h3>
+
+  <div class="feedback">
+    <p>{{ mensagem }}</p>
+  </div>
+
+  <button type="submit">Retornar ao menu</button>
+</form>
+
+<div class="share">
+  <a #btnTwitter href="#" target="_blank">
+    <img width="40" height="40" src="../../../assets/twitter2.avif" alt="twitter" />
+  </a>
+  <a #btnFacebook href="#" target="_blank">
+    <img width="50" height="50" src="../../../assets/facebook.png" alt="facebook" />
+  </a>
+  <a #btnWhatsapp href="#" target="_blank">
+    <img width="40" height="40" src="../../../assets/whatsapp.png" alt="whatsapp" />
+  </a>
+</div>

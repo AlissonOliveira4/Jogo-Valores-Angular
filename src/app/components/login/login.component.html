@@ -1,0 +1,14 @@
+<div>
+  <header>
+    <img (click)="goToInicio()"  src="../../../assets/voltar.webp" alt="voltar" id="voltar" />
+  </header>
+  <form class="grupo" (submit)="saveUser($event)">
+    <div class="login">
+      <label for="nome">Digite seu apelido:</label>
+      <input type="text" id="nome" #nomeInput required />
+    </div>
+
+    <button type="submit">Próximo</button>
+  </form>
+</div>
+

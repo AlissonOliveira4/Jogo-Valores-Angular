@@ -1,0 +1,40 @@
+<div>
+  <header>
+    <div class="temporizador">
+      {{ formatTime(timer.minutes) }}:{{ formatTime(timer.seconds) }}
+    </div>
+    <h3>Valores J&F</h3>
+  </header>
+
+  <form class="grupo" (submit)="acertou($event)">
+    <div id="valor">
+      <img [src]="img" alt="Imagem do valor" />
+      <h1>{{ data?.nome || 'Carregando...' }}</h1>
+      <img [src]="img" alt="Imagem do valor" />
+    </div>
+
+    <p>{{ data?.frase }}</p>
+    <ul id="escolha">
+      <li *ngFor="let pergunta of data?.perguntas; let i = index"
+        [id]="getCharFromIndex(i)"
+        [class.selected]="selectedItems.includes(i)"
+        (click)="toggleSelection(i)">
+        {{ pergunta.pergunta }}
+      </li>
+    </ul>
+
+    <button type="submit" id="botao">Próximo</button>
+  </form>
+
+  <div *ngIf="overlayType" class="overlay">
+    <div class="overlay_content">
+      <div class="imagem" *ngIf="overlayType === 'falha'">
+        <img src="../../../assets/falha.png" alt="falha" />
+      </div>
+      <div class="imagem" *ngIf="overlayType === 'sucesso'">
+        <img src="../../../assets/sucesso.png" alt="sucesso" />
+      </div>
+      <p>{{ data?.exemplo || 'Carregando...' }}</p>
+    </div>
+  </div>
+</div>
