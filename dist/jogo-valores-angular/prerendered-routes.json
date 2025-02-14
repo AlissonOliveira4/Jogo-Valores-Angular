@@ -1,0 +1,14 @@
+{
+  "routes": {
+    "/": {},
+    "/atitudeDeDono": {},
+    "/determinacao": {},
+    "/disciplina": {},
+    "/disponibilidade": {},
+    "/final": {},
+    "/franqueza": {},
+    "/humildade": {},
+    "/login": {},
+    "/simplicidade": {}
+  }
+}
